@@ -862,3 +862,30 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2017-09-22 19:16:16,249 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2017-09-22 19:16:16,257 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-09-22 19:16:16,258 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-09-24 16:17:52,210 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-09-24 16:18:00,200 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: team.awesome:springboot-startup:0.0.1-SNAPSHOT @ C:\Users\Innocent\Music\CS5500\springboot-startup\pom.xml.
+2017-09-24 16:18:01,244 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-09-24 16:18:01,245 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Innocent\Music\CS5500\springboot-startup\src\main\resources
+2017-09-24 16:18:01,245 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Innocent\Music\CS5500\springboot-startup\src\main\resources
+2017-09-24 16:18:01,251 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-09-24 16:18:01,251 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Innocent\Music\CS5500\springboot-startup\src\test\resources
+2017-09-24 16:18:26,945 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2017-09-24 16:18:31,019 [Worker-5] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Innocent\Music\CS5500\springboot-startup
+2017-09-24 16:18:31,021 [Worker-5] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean install
+2017-09-24 16:19:12,714 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-09-24 16:19:12,726 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-09-24 16:19:12,728 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-09-24 16:19:12,734 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-09-24 16:19:12,735 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-09-24 16:19:27,757 [Worker-16] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-09-24 16:19:29,482 [Worker-16] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: team.awesome:springboot-startup:0.0.1-SNAPSHOT @ C:\Users\Innocent\Music\CS5500\springboot-startup\pom.xml.
+2017-09-24 16:19:30,726 [Worker-16] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springboot-startup/src/main/java
+2017-09-24 16:19:30,727 [Worker-16] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springboot-startup/src/main/resources
+2017-09-24 16:19:30,760 [Worker-16] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springboot-startup/src/main/resources
+2017-09-24 16:19:30,778 [Worker-16] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springboot-startup/src/test/java
+2017-09-24 16:19:30,779 [Worker-16] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springboot-startup/src/test/resources
+2017-09-24 16:19:31,134 [Worker-16] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2017-09-24 16:19:32,100 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-09-24 16:19:32,106 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-09-24 16:19:32,108 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-09-24 16:19:32,117 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
