@@ -1,2 +1,2 @@
 spring:
-  application.name: springboot-startup
+  application.name: spring-boot-heroku
