@@ -32,7 +32,7 @@ public class PetController {
   }
 
   @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-  public void deletePetById(@RequestBody Pet pet) {
+  public void updatePet(@RequestBody Pet pet) {
     this.petService.updatePet(pet);
   }
 
