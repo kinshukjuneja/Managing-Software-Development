@@ -14,26 +14,26 @@ public class PetService {
   //test comment
 
   @Autowired
-  @Qualifier("mockData")
-  private PetDao petDb;
+  @Qualifier("mockPetDaoImp")
+  private PetDao petDao;
 
   public Collection<Pet> getAllPets() {
-    return this.petDb.getAllPets();
+    return this.petDao.getAllPets();
   }
 
   public Pet getPetById(int id) {
-    return this.petDb.getPetById(id);
+    return this.petDao.getPetById(id);
   }
 
   public void updatePet(Pet pet) {
-    this.petDb.updatePet(pet);
+    this.petDao.updatePet(pet);
   }
 
   public void insertPet(Pet pet) {
-    this.petDb.insertPetToDb(pet);
+    this.petDao.insertPetToDb(pet);
   }
 
   public void removePetById(int id) {
-    this.petDb.removePetById(id);
+    this.petDao.removePetById(id);
   }
 }
