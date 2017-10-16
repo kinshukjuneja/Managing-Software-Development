@@ -5,15 +5,14 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
 import team.awesome.pet.entity.Shelter;
-import team.awesome.pet.model.ShelterRepository;
+import team.awesome.pet.dao.ShelterDao;
 
 @Service
 public class ShelterService {
   @Autowired
-  @Qualifier("mockShelterData")
-  private ShelterRepository shelterRepo;
+  @Qualifier("mockShelterDaoImp")
+  private ShelterDao shelterRepo;
 
   public Collection<Shelter> getAllShelter() {
     return this.shelterRepo.getAllShelter();
@@ -23,7 +22,7 @@ public class ShelterService {
     return this.shelterRepo.getShelterById(id);
   }
 
-  public void addShelter(Shelter shelter) {
+  public void insertShelter(Shelter shelter) {
     this.shelterRepo.addShelterToDb(shelter);
   }
 
