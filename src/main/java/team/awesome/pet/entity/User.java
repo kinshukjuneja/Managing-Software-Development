@@ -50,9 +50,16 @@ public class User {
     }
 
     /**
+     *  @return the password
+     */
+    public String getPassword() {
+        return this.password;
+    }
+
+    /**
      * @param password the password to set
      */
-    public void setShelter(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
