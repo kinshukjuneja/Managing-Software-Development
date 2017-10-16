@@ -1,0 +1,29 @@
+Hi all,
+
+These are some instructions about GitHub, since all of us are working on our respective 
+branches.
+
+I felt the need for this to be added, just to be on the same page and make our lives 
+easier by avoiding any potenial merge conflicts :)
+
+//To push to current working branch
+git add . //adds new changes in all files OR
+git add <filename> //adds changes in a specific file
+git commit -m “your-commit-message”
+git push
+
+//Shift branches
+git checkout <branch-name>
+
+//Shift to master
+git checkout origin
+
+//take changes from xyz to local-branch
+git pull origin <xyz> <local-branch-name>
+
+//To bring a new branch created at remote to your local
+git fetch <xyz>
+
+//To merge your branch changes to master - IMPORTANT
+git checkout origin master
+git pull origin mater <branch-name> // example: git pull origin master kinshuk-branch
