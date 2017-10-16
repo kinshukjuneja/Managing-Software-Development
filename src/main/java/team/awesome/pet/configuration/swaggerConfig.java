@@ -1,4 +1,4 @@
-package team.awesome.pet.controller;
+package team.awesome.pet.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

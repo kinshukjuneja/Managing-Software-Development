@@ -1,4 +1,4 @@
-package team.awesome.pet.model;
+package team.awesome.pet.dao;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import team.awesome.pet.entity.Shelter;
 
 @Repository
 @Qualifier("mockShelterData")
-public class MockShelterData implements ShelterRepository {
+public class MockShelterData implements ShelterDao {
   private static Map<Integer, Shelter> shelters;
 
   static {

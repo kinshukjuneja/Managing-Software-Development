@@ -1,4 +1,4 @@
-package team.awesome.pet.model;
+package team.awesome.pet.dao;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import team.awesome.pet.entity.Pet;
 
 @Repository
 @Qualifier("mockData")
-public class MockPetData implements PetDb {
+public class MockPetData implements PetDao {
   private static Map<Integer, Pet> pets;
   static {
     MockPetData.pets = new HashMap<Integer, Pet>() {
