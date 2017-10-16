@@ -1,10 +1,10 @@
-package team.awesome.pet.model;
+package team.awesome.pet.dao;
 
 import java.util.Collection;
 
 import team.awesome.pet.entity.Pet;
 
-public interface PetDb {
+public interface PetDao {
   Collection<Pet> getAllPets();
 
   Pet getPetById(int id);
