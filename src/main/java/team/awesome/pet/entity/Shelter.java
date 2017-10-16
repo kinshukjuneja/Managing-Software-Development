@@ -4,17 +4,21 @@ public class Shelter {
   private int id;
   private String name;
   private String description;
-  String city;
+  private boolean status;
+  private int capacity;
+  private String city;
   private int zipCode;
-
+  
   public Shelter() {
 
   }
 
-  public Shelter(int id, String name, String description, int zipCode) {
+  public Shelter(int id, String name, String description, boolean status, int capacity, int zipCode) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.status = status;
+    this.capacity = capacity;
     this.zipCode = zipCode;
   }
 
@@ -58,6 +62,39 @@ public class Shelter {
    */
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  /**
+   *
+   * @return the capacity
+   */
+  public int getCapacity() {
+    return capacity;
+  }
+
+  /**
+   *
+   * @param capacity
+   */
+  public void setCapacity(int capacity) {
+    this.capacity = capacity;
+  }
+
+  /**
+   *
+   * @return status i.e. active or not
+   */
+  public boolean isStatus() {
+    return status;
+  }
+
+  /**
+   *
+   * @param status
+   */
+
+  public void setStatus(boolean status) {
+    this.status = status;
   }
 
   /**
