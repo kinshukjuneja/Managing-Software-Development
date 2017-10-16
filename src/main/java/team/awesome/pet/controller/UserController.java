@@ -27,13 +27,13 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void updateUser(@RequestBody User pet) {
+    public void updateUser(@RequestBody User user) {
         this.userService.updateUser(user);
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void insertUser(@RequestBody User user) {
-        this.userService.insertPet(user);
+        this.userService.insertUser(user);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
