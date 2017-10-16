@@ -32,7 +32,7 @@ public class ShelterController {
 
   @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void insertShelter(@RequestBody Shelter shelter) {
-    this.shelterService.addShelter(shelter);
+    this.shelterService.insertShelter(shelter);
   }
 
   @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
