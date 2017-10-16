@@ -5,16 +5,17 @@ public class Shelter {
   private String name;
   private String description;
   String city;
-  private int zip_code;
+  private int zipCode;
 
   public Shelter() {
 
   }
 
-  public Shelter(String name, String description, int zip_code) {
+  public Shelter(int id, String name, String description, int zipCode) {
+    this.id = id;
     this.name = name;
     this.description = description;
-    this.zip_code = zip_code;
+    this.zipCode = zipCode;
   }
 
   /**
@@ -77,16 +78,13 @@ public class Shelter {
    * @return the zip_code
    */
   public int getZip_code() {
-    return this.zip_code;
+    return this.zipCode;
   }
 
   /**
    * @param zip_code the zip_code to set
    */
   public void setZip_code(int zip_code) {
-    this.zip_code = zip_code;
+    this.zipCode = zipCode;
   }
-
-
-
 }
