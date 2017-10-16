@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import team.awesome.pet.entity.Pet;
-import team.awesome.pet.model.PetDb;
+import team.awesome.pet.dao.PetDao;
 
 @Service
 public class PetService {
@@ -15,7 +15,7 @@ public class PetService {
 
   @Autowired
   @Qualifier("mockData")
-  private PetDb petDb;
+  private PetDao petDb;
 
   public Collection<Pet> getAllPets() {
     return this.petDb.getAllPets();
