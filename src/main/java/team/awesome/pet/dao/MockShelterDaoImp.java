@@ -21,9 +21,9 @@ public class MockShelterDaoImp implements ShelterDao {
       private static final long serialVersionUID = 1L;
 
       {
-        put(1, new Shelter(1,"Seattle-Shelter", "Only takes in dogs", 98005));
-        put(2, new Shelter(2,"Bellevue-Shelter", "Opens to all pets", 98025));
-        put(3, new Shelter(3,"Tacoma-Shelter", "Opens to cats only", 59001));
+        put(1, new Shelter(1,"Seattle-Shelter", "Only takes in dogs", true, 10000,  98005));
+        put(2, new Shelter(2,"Bellevue-Shelter", "Opens to all pets", true, 1000000,  98025));
+        put(3, new Shelter(3,"Tacoma-Shelter", "Opens to cats only", true, 1000, 59001));
       }
     };
   }

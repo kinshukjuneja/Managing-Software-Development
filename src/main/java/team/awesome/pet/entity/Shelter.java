@@ -8,7 +8,7 @@ public class Shelter {
   private int capacity;
   private String city;
   private int zipCode;
-  
+
   public Shelter() {
 
   }
