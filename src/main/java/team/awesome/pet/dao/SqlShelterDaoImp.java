@@ -1,8 +1,10 @@
-package edu.neu.cs5500.animaltracking.dao;
+package team.awesome.pet.dao;
 
-import edu.neu.cs5500.animaltracking.entity.Shelter;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import team.awesome.pet.entity.Shelter;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -14,7 +16,7 @@ public class SqlShelterDaoImp implements ShelterDao {
     public Collection<Shelter> getAllShelters() {
         return new ArrayList<Shelter>(){
             {
-                add(new Shelter(1, "Downtown-Shelter"));
+                add(new Shelter(1,"Seattle-Shelter", "Only takes in dogs", 98005));
             }
         };
     }
