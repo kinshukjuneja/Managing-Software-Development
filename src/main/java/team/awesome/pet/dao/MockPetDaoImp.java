@@ -11,10 +11,10 @@ import team.awesome.pet.entity.Pet;
 
 @Repository
 @Qualifier("mockData")
-public class MockPetData implements PetDao {
+public class MockPetDaoImp implements PetDao {
   private static Map<Integer, Pet> pets;
   static {
-    MockPetData.pets = new HashMap<Integer, Pet>() {
+    MockPetDaoImp.pets = new HashMap<Integer, Pet>() {
 
       /**
        *
@@ -31,29 +31,29 @@ public class MockPetData implements PetDao {
 
   @Override
   public Collection<Pet> getAllPets() {
-    return MockPetData.pets.values();
+    return MockPetDaoImp.pets.values();
   }
 
   @Override
   public Pet getPetById(int id) {
-    return MockPetData.pets.get(id);
+    return MockPetDaoImp.pets.get(id);
   }
 
   @Override
   public void updatePet(Pet pet) {
-    Pet p = MockPetData.pets.get(pet.getId());
+    Pet p = MockPetDaoImp.pets.get(pet.getId());
     p.setName(pet.getName());
     p.setShelter(pet.getShelter());
-    MockPetData.pets.put(pet.getId(), pet);
+    MockPetDaoImp.pets.put(pet.getId(), pet);
   }
 
   @Override
   public void insertPetToDb(Pet pet) {
-    MockPetData.pets.put(pet.getId(), pet);
+    MockPetDaoImp.pets.put(pet.getId(), pet);
   }
 
   @Override
   public void removePetById(int id) {
-    MockPetData.pets.remove(id);
+    MockPetDaoImp.pets.remove(id);
   }
 }
