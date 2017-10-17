@@ -16,7 +16,7 @@ public class SqlShelterDaoImp implements ShelterDao {
     public Collection<Shelter> getAllShelters() {
         return new ArrayList<Shelter>(){
             {
-                add(new Shelter(1,"Seattle-Shelter", "Only takes in dogs", 98005));
+                add(new Shelter(1,"Seattle-Shelter", "Only takes in dogs", true, 10000,  98005));
             }
         };
     }

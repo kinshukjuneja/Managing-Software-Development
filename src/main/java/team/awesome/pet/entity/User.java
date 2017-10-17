@@ -10,7 +10,7 @@ public class User {
     private long phone;
     private String email;
     private String address;
-    private List<Pet> claimPets;
+   // private List<Pet> claimPets;
 
     public User(int id, String name, String password) {
         this.id = id;
@@ -116,13 +116,14 @@ public class User {
     public List<Pet> getClaimPets() {
         return claimPets;
     }
-
+/*
     /**
      * @param pet the pet claimed by user are added
      */
     public void addClaimPets(Pet pet) {
        claimPets.add(pet);
     }
+    
 }
 
 
