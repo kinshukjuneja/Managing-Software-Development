@@ -16,7 +16,7 @@ public class User {
         this.id = id;
         this.name = name;
         this.password = password;
-        claimPets = new ArrayList<>();
+        //claimPets = new ArrayList<>();
     }
 
     public User() {}
@@ -109,21 +109,21 @@ public class User {
         this.address = address;
     }
 
-    /**
-     *
-     * @return list of claimPets
-     */
-    public List<Pet> getClaimPets() {
-        return claimPets;
-    }
-/*
-    /**
-     * @param pet the pet claimed by user are added
-     */
-    public void addClaimPets(Pet pet) {
-       claimPets.add(pet);
-    }
-    
+//    /**
+//     *
+//     * @return list of claimPets
+//     */
+//    public List<Pet> getClaimPets() {
+//        return claimPets;
+//    }
+//
+//    /**
+//     * @param pet the pet claimed by user are added
+//     */
+//    public void addClaimPets(Pet pet) {
+//       claimPets.add(pet);
+//    }
+
 }
 
 
