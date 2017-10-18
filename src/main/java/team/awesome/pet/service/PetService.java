@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import team.awesome.pet.entity.Pet;
 import team.awesome.pet.dao.PetDao;
+import team.awesome.pet.model.Pet;
 
 @Service
 public class PetService {
-  //test comment
+  // test comment
 
   @Autowired
-  @Qualifier("mockPetDaoImp")
+  @Qualifier("mockPetData")
   private PetDao petDao;
 
   public Collection<Pet> getAllPets() {

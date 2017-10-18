@@ -2,7 +2,7 @@ package team.awesome.pet.dao;
 
 import java.util.Collection;
 
-import team.awesome.pet.entity.Shelter;
+import team.awesome.pet.model.Shelter;
 
 public interface ShelterDao {
   Collection<Shelter> getAllShelters();

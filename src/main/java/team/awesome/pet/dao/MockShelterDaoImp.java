@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
-import team.awesome.pet.entity.Shelter;
+
+import team.awesome.pet.model.Shelter;
 
 @Repository
 @Qualifier("mockShelterData")

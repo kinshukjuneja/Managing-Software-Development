@@ -2,7 +2,8 @@ package team.awesome.pet.dao;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
-import team.awesome.pet.entity.Pet;
+
+import team.awesome.pet.model.Pet;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -7,10 +7,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import team.awesome.pet.entity.Pet;
+import team.awesome.pet.model.Pet;
 
 @Repository
-@Qualifier("mockData")
+@Qualifier("mockPetData")
 public class MockPetDaoImp implements PetDao {
   private static Map<Integer, Pet> pets;
   static {
