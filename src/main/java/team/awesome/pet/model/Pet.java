@@ -1,4 +1,4 @@
-package team.awesome.pet.entity;
+package team.awesome.pet.model;
 
 public class Pet {
 

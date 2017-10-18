@@ -1,4 +1,4 @@
-package team.awesome.pet.configuration;
+package team.awesome.pet.util;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class swaggerConfig {
+public class SwaggerConfigApplication {
 
   @Bean
   public Docket postsApi() {
@@ -23,9 +23,11 @@ public class swaggerConfig {
         .select().paths(postPaths()).build();
   }
 
+  @SuppressWarnings("unchecked")
   private Predicate<String> postPaths() {
     // return Predicates.or(PathSelectors.regex("/pets.*"));
-    return Predicates.or(PathSelectors.regex("/pets.*"), PathSelectors.regex("/shelters.*"));
+    return Predicates.or(PathSelectors.regex("/pets.*"), PathSelectors.regex("/pet-types.*"),
+        PathSelectors.regex("/shelters.*"), PathSelectors.regex("/users.*"));
   }
 
   private ApiInfo apiInfo() {

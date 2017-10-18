@@ -1,17 +1,17 @@
 package team.awesome.pet.dao;
 
-import team.awesome.pet.entity.User;
-
 import java.util.Collection;
 
+import team.awesome.pet.model.User;
+
 public interface UserDao {
-    Collection<User> getAllUsers();
+  Collection<User> getAllUsers();
 
-    User getUserById(int id);
+  User getUserById(int id);
 
-    void updateUser(User pet);
+  void updateUser(User user);
 
-    void insertUserToDb(User pet);
+  void insertUserToDb(User user);
 
-    void removeUserById(int id);
+  void removeUserById(int id);
 }

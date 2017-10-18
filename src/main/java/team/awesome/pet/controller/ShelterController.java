@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import team.awesome.pet.entity.Shelter;
+import team.awesome.pet.model.Shelter;
 import team.awesome.pet.service.ShelterService;
 
 @RestController

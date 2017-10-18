@@ -2,7 +2,7 @@ package team.awesome.pet.dao;
 
 import java.util.Collection;
 
-import team.awesome.pet.entity.Pet;
+import team.awesome.pet.model.Pet;
 
 public interface PetDao {
   Collection<Pet> getAllPets();

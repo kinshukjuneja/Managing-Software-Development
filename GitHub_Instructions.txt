@@ -4,7 +4,7 @@ These are some instructions about GitHub, since all of us are working on our res
 branches.
 
 I felt the need for this to be added, just to be on the same page and make our lives 
-easier by avoiding any potenial merge conflicts :)
+easier by avoiding any potential merge conflicts :)
 
 //To push to current working branch
 git add . //adds new changes in all files OR
@@ -27,3 +27,11 @@ git fetch <xyz>
 //To merge your branch changes to master - IMPORTANT
 git checkout origin master
 git pull origin mater <branch-name> // example: git pull origin master kinshuk-branch
+
+//Side note, to merge from master to master if you by any chance work directly
+//from a master branch
+git pull origin master master
+
+//If you make changes to your current local master and it is either behind/ahead of
+//what currently in host/remote master
+git stash
