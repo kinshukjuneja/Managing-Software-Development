@@ -1,5 +1,6 @@
 package team.awesome.pet.controller;
 
+import java.math.BigInteger;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,7 @@ public class ShelterController {
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-  public void deleteShelterById(@PathVariable("id") int id) {
+  public void deleteShelterById(@PathVariable("id") BigInteger id) {
     this.shelterService.removeShelterById(id);
   }
 }

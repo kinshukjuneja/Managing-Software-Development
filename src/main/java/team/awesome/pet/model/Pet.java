@@ -1,60 +1,55 @@
 package team.awesome.pet.model;
 
-public class Pet {
+import java.math.BigInteger;
 
-  private int id;
-  private String name;
-  private String shelter;
+public class Pet extends Name {
 
-  public Pet(int id, String name, String shelter) {
-    this.id = id;
-    this.name = name;
-    this.shelter = shelter;
+  // TODO: Have to add in the correct field for Pet
+  // private BigInteger petId instead of int petId
+  private int petId;
+  // private String name;
+  private PetTypeAndCategory petTypeCategory;
+  private BigInteger shelterId;
+  private double pet_length;
+  private double pet_weight;
+  private String pet_color;
+  private int health_status;
+  // private Location current_location;
+
+  public Pet(int petId, String name, BigInteger shelterId) {
+    super();
+    this.petId = petId;
+    this.shelterId = shelterId;
   }
 
   public Pet() {}
 
   /**
-   * @return the id
+   * @return the petId of a pet
    */
-  public int getId() {
-    return this.id;
+  public int getPetId() {
+    return this.petId;
   }
 
   /**
-   * @param id the id to set
+   * @param petId the petId of a pet to set
    */
-  public void setId(int id) {
-    this.id = id;
+  public void setPetId(int petId) {
+    this.petId = petId;
   }
 
   /**
-   * @return the name
+   * @return the shelterId of a shelter
    */
-  public String getName() {
-    return this.name;
+  public BigInteger getShelterId() {
+    return this.shelterId;
   }
 
   /**
-   * @param name the name to set
+   * @param shelterId the shelterId of a shelter to set
    */
-  public void setName(String name) {
-    this.name = name;
+  public void setShelterId(BigInteger shelterId) {
+    this.shelterId = shelterId;
   }
-
-  /**
-   * @return the shelter
-   */
-  public String getShelter() {
-    return this.shelter;
-  }
-
-  /**
-   * @param shelter the shelter to set
-   */
-  public void setShelter(String shelter) {
-    this.shelter = shelter;
-  }
-
 
 }

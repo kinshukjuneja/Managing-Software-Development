@@ -1,8 +1,10 @@
 package team.awesome.pet.dao;
 
+import java.math.BigInteger;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
@@ -11,10 +13,10 @@ import team.awesome.pet.model.Shelter;
 @Repository
 @Qualifier("mockShelterData")
 public class MockShelterDaoImp implements ShelterDao {
-  private static Map<Integer, Shelter> shelters;
+  private static Map<BigInteger, Shelter> shelters;
 
   static {
-    MockShelterDaoImp.shelters = new HashMap<Integer, Shelter>() {
+    MockShelterDaoImp.shelters = new HashMap<BigInteger, Shelter>() {
 
       /**
        *
@@ -22,9 +24,12 @@ public class MockShelterDaoImp implements ShelterDao {
       private static final long serialVersionUID = 1L;
 
       {
-        put(1, new Shelter(1,"Seattle-Shelter", "Only takes in dogs", true, 10000,  98005));
-        put(2, new Shelter(2,"Bellevue-Shelter", "Opens to all pets", true, 1000000,  98025));
-        put(3, new Shelter(3,"Tacoma-Shelter", "Opens to cats only", true, 1000, 59001));
+        put(new BigInteger("1"),
+            new Shelter(new BigInteger("12345"), "Seattle-Shelter", true, 10000, "Seattle", 98005));
+        put(new BigInteger("2"),
+            new Shelter(new BigInteger("12346"), "Bellevue-Shelter", true, 500, "Bellevue", 98225));
+        put(new BigInteger("3"),
+            new Shelter(new BigInteger("12347"), "Tacome-Shelter", true, 5000, "Tacoma", 98554));
       }
     };
   }
@@ -41,19 +46,19 @@ public class MockShelterDaoImp implements ShelterDao {
 
   @Override
   public void updateShelter(Shelter shelter) {
-    Shelter s = MockShelterDaoImp.shelters.get(shelter.getId());
+    Shelter s = MockShelterDaoImp.shelters.get(shelter.getShelterId());
     s.setName(shelter.getName());
-    s.setZip_code(shelter.getZip_code());
-    MockShelterDaoImp.shelters.put(shelter.getId(), shelter);
+    s.setZipCode(shelter.getZipCode());
+    MockShelterDaoImp.shelters.put(shelter.getShelterId(), shelter);
   }
 
   @Override
   public void insertShelterToDb(Shelter shelter) {
-    MockShelterDaoImp.shelters.put(shelter.getId(), shelter);
+    MockShelterDaoImp.shelters.put(shelter.getShelterId(), shelter);
   }
 
   @Override
-  public void removeShelterById(int id) {
+  public void removeShelterById(BigInteger id) {
     MockShelterDaoImp.shelters.remove(id);
   }
 

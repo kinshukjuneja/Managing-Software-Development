@@ -7,6 +7,8 @@ package team.awesome.pet.model;
  *
  */
 
+// @Gaohan - Feel free to change pettype to int id by extends to IdEntity class instead. Thanks
+
 public class PetType extends Name {
 
   public PetType() {
