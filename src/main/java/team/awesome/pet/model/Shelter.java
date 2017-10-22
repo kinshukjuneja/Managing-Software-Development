@@ -1,8 +1,11 @@
 package team.awesome.pet.model;
 
-public class Shelter {
-  private int id;
-  private String name;
+import java.math.BigInteger;
+
+public class Shelter extends Name {
+  // private int id;
+  // private String name;
+  private BigInteger shelterId;
   private String description;
   private boolean status;
   private int capacity;
@@ -13,41 +16,29 @@ public class Shelter {
 
   }
 
-  public Shelter(int id, String name, String description, boolean status, int capacity, int zipCode) {
-    this.id = id;
-    this.name = name;
+  public Shelter(BigInteger shelterId, String description, boolean status, int capacity,
+      String city, int zipCode) {
+    super();
+    this.shelterId = shelterId;
     this.description = description;
     this.status = status;
     this.capacity = capacity;
+    this.city = city;
     this.zipCode = zipCode;
   }
 
   /**
-   * @return the id
+   * @return the shelterId
    */
-  public int getId() {
-    return this.id;
+  public BigInteger getShelterId() {
+    return this.shelterId;
   }
 
   /**
-   * @param id the id to set
+   * @param shelterId the shelterId to set
    */
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  /**
-   * @return the name
-   */
-  public String getName() {
-    return this.name;
-  }
-
-  /**
-   * @param name the name to set
-   */
-  public void setName(String name) {
-    this.name = name;
+  public void setShelterId(BigInteger shelterId) {
+    this.shelterId = shelterId;
   }
 
   /**
@@ -65,36 +56,31 @@ public class Shelter {
   }
 
   /**
-   *
+   * @return the status
+   */
+  public boolean isStatus() {
+    return this.status;
+  }
+
+  /**
+   * @param status the status to set
+   */
+  public void setStatus(boolean status) {
+    this.status = status;
+  }
+
+  /**
    * @return the capacity
    */
   public int getCapacity() {
-    return capacity;
+    return this.capacity;
   }
 
   /**
-   *
-   * @param capacity
+   * @param capacity the capacity to set
    */
   public void setCapacity(int capacity) {
     this.capacity = capacity;
-  }
-
-  /**
-   *
-   * @return status i.e. active or not
-   */
-  public boolean isStatus() {
-    return status;
-  }
-
-  /**
-   *
-   * @param status
-   */
-
-  public void setStatus(boolean status) {
-    this.status = status;
   }
 
   /**
@@ -112,16 +98,17 @@ public class Shelter {
   }
 
   /**
-   * @return the zip_code
+   * @return the zipCode
    */
-  public int getZip_code() {
+  public int getZipCode() {
     return this.zipCode;
   }
 
   /**
-   * @param zip_code the zip_code to set
+   * @param zipCode the zipCode to set
    */
-  public void setZip_code(int zip_code) {
+  public void setZipCode(int zipCode) {
     this.zipCode = zipCode;
   }
+
 }
