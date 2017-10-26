@@ -1,6 +1,5 @@
 package team.awesome.pet.dao;
 
-import team.awesome.pet.entity.Pet;
 import team.awesome.pet.entity.User;
 import java.util.Collection;
 import java.util.HashMap;
