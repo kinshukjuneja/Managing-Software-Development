@@ -84,7 +84,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>team.awesome.pet</mainClass>
+							<mainClass>team.awesome.pet.WebApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
