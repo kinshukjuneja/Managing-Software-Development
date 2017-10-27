@@ -21,18 +21,27 @@ public class PetControllerTest {
 
     @Mock
     private PetService mockPetService;
+    Pet pet;
 
     @Before
     public void init() {
-        petController = new PetController();
-        expected = new HashSet<>();
         MockitoAnnotations.initMocks(this);
+        petController = new PetController(mockPetService);
+        pet = new Pet(1, "tommy", new BigInteger("1234567890"));
+        expected = new HashSet<>();
     }
 
     @Test
     public void testGetAllPets() {
-        expected.add(new Pet(1, "woof", new BigInteger("1234567890")));
+        expected.add(pet);
         Mockito.when(mockPetService.getAllPets()).thenReturn(expected);
         assertEquals(expected, petController.getAllPets());
+        Mockito.verify(mockPetService, Mockito.times(1)).getAllPets();
+    }
+
+    @Test
+    public void testInsertPet() {
+        petController.insertPet(pet);
+        Mockito.verify(mockPetService, Mockito.times(1)).insertPet(pet);
     }
 }
