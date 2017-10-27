@@ -75,20 +75,13 @@
 	            <version>2.3.2</version>
 	            <configuration>
 	                <finalName>${project.artifactId}</finalName>
-	            </configuration>
-        	</plugin>
-        	
-        	<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
+	                <archive>
 						<manifest>
 							<mainClass>team.awesome.pet.WebApplication</mainClass>
 						</manifest>
 					</archive>
-				</configuration>
-			</plugin>
+	            </configuration>
+        	</plugin>
         	
         </plugins>
     </build>
