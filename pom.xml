@@ -77,6 +77,19 @@
 	                <finalName>${project.artifactId}</finalName>
 	            </configuration>
         	</plugin>
+        	
+        	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>team.awesome.pet</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+        	
         </plugins>
     </build>
 
