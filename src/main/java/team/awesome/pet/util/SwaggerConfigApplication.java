@@ -27,7 +27,7 @@ public class SwaggerConfigApplication {
   private Predicate<String> postPaths() {
     // return Predicates.or(PathSelectors.regex("/pets.*"));
     return Predicates.or(PathSelectors.regex("/pets.*"), PathSelectors.regex("/pet-types.*"),
-        PathSelectors.regex("/shelters.*"), PathSelectors.regex("/users.*"));
+        PathSelectors.regex("/shelters.*"), PathSelectors.regex("/users.*"), PathSelectors.regex("/rest/pets.*"));
   }
 
   private ApiInfo apiInfo() {

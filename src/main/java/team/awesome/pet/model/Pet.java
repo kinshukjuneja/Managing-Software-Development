@@ -1,55 +1,28 @@
 package team.awesome.pet.model;
 
-import java.math.BigInteger;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Pet extends Name {
+@Entity
+@Table(name = "pet")
+public class Pet {
 
-  // TODO: Have to add in the correct field for Pet
-  // private BigInteger petId instead of int petId
-  private int petId;
-  // private String name;
-  private PetTypeAndCategory petTypeCategory;
-  private BigInteger shelterId;
-  private double pet_length;
-  private double pet_weight;
-  private String pet_color;
-  private int health_status;
-  // private Location current_location;
+	@Id
+	@Column(name = "id")
+	private int id;
+	@Column(name = "name")
+	private String name;
+	@Column(name = "shelter")
+	private String shelter;
 
-  public Pet(int petId, String name, BigInteger shelterId) {
-    super();
-    this.petId = petId;
-    this.shelterId = shelterId;
+  public Pet(int id, String name, String shelter) {
+    this.id = id;
+    this.name = name;
+    this.shelter = shelter;
   }
 
   public Pet() {}
-
-  /**
-   * @return the petId of a pet
-   */
-  public int getPetId() {
-    return this.petId;
-  }
-
-  /**
-   * @param petId the petId of a pet to set
-   */
-  public void setPetId(int petId) {
-    this.petId = petId;
-  }
-
-  /**
-   * @return the shelterId of a shelter
-   */
-  public BigInteger getShelterId() {
-    return this.shelterId;
-  }
-
-  /**
-   * @param shelterId the shelterId of a shelter to set
-   */
-  public void setShelterId(BigInteger shelterId) {
-    this.shelterId = shelterId;
-  }
 
 }
