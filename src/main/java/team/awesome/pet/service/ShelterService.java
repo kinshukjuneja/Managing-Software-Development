@@ -1,17 +1,19 @@
 package team.awesome.pet.service;
 
+import java.math.BigInteger;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import team.awesome.pet.entity.Shelter;
+
 import team.awesome.pet.dao.ShelterDao;
+import team.awesome.pet.model.Shelter;
 
 @Service
 public class ShelterService {
   @Autowired
-  @Qualifier("mockShelterDaoImp")
+  @Qualifier("mockShelterData")
   private ShelterDao shelterDao;
 
   public Collection<Shelter> getAllShelter() {
@@ -30,7 +32,7 @@ public class ShelterService {
     this.shelterDao.updateShelter(shelter);
   }
 
-  public void removeShelterById(int id) {
+  public void removeShelterById(BigInteger id) {
     this.shelterDao.removeShelterById(id);
   }
 }

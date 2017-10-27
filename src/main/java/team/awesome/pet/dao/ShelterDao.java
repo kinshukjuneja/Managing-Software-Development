@@ -1,8 +1,9 @@
 package team.awesome.pet.dao;
 
+import java.math.BigInteger;
 import java.util.Collection;
 
-import team.awesome.pet.entity.Shelter;
+import team.awesome.pet.model.Shelter;
 
 public interface ShelterDao {
   Collection<Shelter> getAllShelters();
@@ -13,5 +14,5 @@ public interface ShelterDao {
 
   void insertShelterToDb(Shelter shelter);
 
-  void removeShelterById(int id);
+  void removeShelterById(BigInteger id);
 }
