@@ -1,6 +1,5 @@
 package team.awesome.pet.dao.jpa;
 
-import java.math.BigInteger;
 import java.util.Collection;
 
 import team.awesome.pet.dao.ShelterDao;
@@ -40,7 +39,7 @@ public class JpaShelterDao implements ShelterDao {
   }
 
   @Override
-  public void removeShelterById(BigInteger id) {
+  public void removeShelterById(int id) {
     // TODO Auto-generated method stub
 
   }
