@@ -1,5 +1,6 @@
 package team.awesome.pet.dao;
 
+import java.math.BigInteger;
 import java.util.Collection;
 
 import team.awesome.pet.model.Pet;
@@ -56,7 +57,7 @@ public interface PetRescueOrganizationDao {
 
   void updateShelter(Shelter shelter);
 
-  void removeShelterById(int id);
+  void removeShelterById(BigInteger id);
 
   /**
    * All User's related Restful API calls.
