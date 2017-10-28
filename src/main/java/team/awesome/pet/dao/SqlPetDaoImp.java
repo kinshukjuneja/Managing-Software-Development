@@ -17,7 +17,7 @@ public class SqlPetDaoImp implements PetDao {
   public Collection<Pet> getAllPets() {
     return new ArrayList<Pet>() {
       {
-        add(new Pet(1, "Snowy", new BigInteger("1234567890")));
+//        add(new Pet(1, "Snowy", new BigInteger("1234567890")));
       }
     };
   }

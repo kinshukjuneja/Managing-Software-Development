@@ -22,9 +22,9 @@ public class MockUserDaoImp implements UserDao {
       private static final long serialVersionUID = 1L;
 
       {
-        put(1, new User(1, "Kinshuk", "Awesome1"));
-        put(2, new User(2, "John", "Awesome2"));
-        put(3, new User(3, "Guohan", "Awesome3"));
+//        put(1, new User(1, "Kinshuk", "Awesome1"));
+//        put(2, new User(2, "John", "Awesome2"));
+//        put(3, new User(3, "Guohan", "Awesome3"));
       }
     };
   }

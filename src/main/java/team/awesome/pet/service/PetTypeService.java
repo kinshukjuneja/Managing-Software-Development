@@ -8,28 +8,34 @@ import org.springframework.stereotype.Service;
 
 import team.awesome.pet.dao.PetTypeDao;
 import team.awesome.pet.model.PetType;
+import team.awesome.pet.repository.TypeRepository;
 
 @Service
 public class PetTypeService {
 
   @Autowired
-  @Qualifier("mockPetTypeData")
-  private PetTypeDao petTypeDao;
+//  @Qualifier("mockPetTypeData")
+//  private PetTypeDao petTypeDao;
+  	private TypeRepository typeRepository;
 
-  public Collection<PetType> getAllPetType() {
-    return this.petTypeDao.getAllPetType();
-  }
+  	public Collection<PetType> getAllPetType() {
+  		return this.typeRepository.findAll();
+  	}
 
-  public PetType getPetTypeById(int id) {
-    return this.petTypeDao.getPetTypeById(id);
-  }
+  	public PetType getPetTypeById(int id) {
+  		return this.typeRepository.findOne(id);
+  	}
+  
+  	public void inserPetType(PetType petType) {
+  		this.typeRepository.save(petType);
+  	}
 
-  public void updatePetType(PetType petType) {
-    this.petTypeDao.updatePetType(petType);
-  }
+  	public void updatePetType(PetType petType) {
+  		this.typeRepository.save(petType);
+  	}
 
-  public void removePetType(int id) {
-    this.petTypeDao.removePetType(id);
-  }
+  	public void removePetType(int id) {
+  		this.typeRepository.delete(id);
+  	}
 
 }

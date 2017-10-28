@@ -15,41 +15,38 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import team.awesome.pet.model.PetType;
+import team.awesome.pet.model.Shelter;
 import team.awesome.pet.service.PetTypeService;
 
 @RestController
 @RequestMapping("/pet-types")
 public class PetTypeController {
 
-  @Autowired
-  private PetTypeService petTypeService;
+	@Autowired
+	private PetTypeService petTypeService;
 
-  @RequestMapping(method = RequestMethod.GET)
-  public Collection<PetType> getAllPetType() {
-    return this.petTypeService.getAllPetType();
-  }
+	@RequestMapping(method = RequestMethod.GET)
+	public Collection<PetType> getAllPetType() {
+		return this.petTypeService.getAllPetType();
+	}
 
-  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-  public PetType getPetTypeById(int id) {
-    return this.petTypeService.getPetTypeById(id);
-  }
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public PetType getPetTypeById(@PathVariable("id") int id) {
+		return this.petTypeService.getPetTypeById(id);
+	}
 
-  @RequestMapping(value = "/{id}", method = RequestMethod.PUT,
-      consumes = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<PetType> updatePetType(@PathVariable("id") int id,
-      @RequestBody @Valid PetType petType) {
-    PetType type = this.petTypeService.getPetTypeById(id);
-    if (type == null) {
-      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-    type.setName(petType.getName());
-    this.petTypeService.updatePetType(type);
-    return new ResponseEntity<>(type, HttpStatus.NO_CONTENT);
-  }
+	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void insertShelter(@RequestBody PetType petType) {
+		this.petTypeService.inserPetType(petType);
+	}
 
-  @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-  public void deletePetTypeById(int id) {
-    this.petTypeService.removePetType(id);
-  }
+	@RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void updateShelter(@RequestBody PetType petType) {
+		this.petTypeService.updatePetType(petType);
+	}
 
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public void deletePetTypeById(@PathVariable("id") int id) {
+		this.petTypeService.removePetType(id);
+	}
 }

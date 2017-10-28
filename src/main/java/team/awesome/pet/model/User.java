@@ -3,126 +3,113 @@ package team.awesome.pet.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
-    private int id;
-    private String name;
+	@Id
+	@Column(name = "user_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private int userID;
+	@Column(name = "user_name")
+    private String userName;
+	@Column(name = "password")
     private String password;
+	@Column(name = "first_name")
+	private String firstName;
+	@Column(name = "last_name")
+	private String lastName;
+	@Column(name = "phone")
     private long phone;
+	@Column(name = "email")
     private String email;
+	@Column(name = "address")
     private String address;
-   // private List<Pet> claimPets;
+	
+	public User() {}
+	
+	public User(int id, String name, String password, String firstName, String lastName, long phone, String email,
+			String address) {
+		super();
+		this.userID = id;
+		this.userName = name;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phone = phone;
+		this.email = email;
+		this.address = address;
+	}
 
-    public User(int id, String name, String password) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        //claimPets = new ArrayList<>();
-    }
+	public int getId() {
+		return userID;
+	}
 
-    public User() {}
+	public void setId(int id) {
+		this.userID = id;
+	}
 
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return this.id;
-    }
+	public String getName() {
+		return userName;
+	}
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setName(String name) {
+		this.userName = name;
+	}
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return this.name;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    /**
-     *  @return the password
-     */
-    public String getPassword() {
-        return this.password;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
+	public String getLastName() {
+		return lastName;
+	}
 
-    /**
-     *
-     * @return the phone
-     */
-    public Long getPhone() {
-        return phone;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    /**
-     * @param phone the phone to set
-     */
-    public void setPhone(Long phone) {
-        this.phone = phone;
-    }
+	public long getPhone() {
+		return phone;
+	}
 
-    /**
-     *
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
+	public void setPhone(long phone) {
+		this.phone = phone;
+	}
 
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    /**
-     *
-     * @return the address
-     */
-    public String getAddress() {
-        return address;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    /**
-     * @param address the address to set
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public String getAddress() {
+		return address;
+	}
 
-//    /**
-//     *
-//     * @return list of claimPets
-//     */
-//    public List<Pet> getClaimPets() {
-//        return claimPets;
-//    }
-//
-//    /**
-//     * @param pet the pet claimed by user are added
-//     */
-//    public void addClaimPets(Pet pet) {
-//       claimPets.add(pet);
-//    }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
 }
 
