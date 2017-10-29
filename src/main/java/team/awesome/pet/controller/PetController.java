@@ -1,6 +1,5 @@
 package team.awesome.pet.controller;
 
-
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,35 +13,42 @@ import org.springframework.web.bind.annotation.RestController;
 import team.awesome.pet.model.Pet;
 import team.awesome.pet.service.PetService;
 
+/**
+ *
+ * Must refactor all the code below to use JpaRep methods
+ *
+ */
+
+
 @RestController
 @RequestMapping("/pets")
 public class PetController {
 
-	@Autowired
-	private PetService petService;
+  @Autowired
+  private PetService petService;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public Collection<Pet> getAllPets() {
-		return this.petService.getAllPets();
-	}
+  @RequestMapping(method = RequestMethod.GET)
+  public Collection<Pet> getAllPets() {
+    return this.petService.getAllPets();
+  }
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public Pet getPetById(@PathVariable("id") int id) {
-		return this.petService.getPetById(id);
-	}
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public Pet getPetById(@PathVariable("id") int id) {
+    return this.petService.getPetById(id);
+  }
 
-	@RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void updatePet(@RequestBody Pet pet) {
-		this.petService.updatePet(pet);
-	}
+  @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+  public void updatePet(@RequestBody Pet pet) {
+    this.petService.updatePet(pet);
+  }
 
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void insertPet(@RequestBody Pet pet) {
-		this.petService.insertPet(pet);
-	}
+  @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+  public void insertPet(@RequestBody Pet pet) {
+    this.petService.insertPet(pet);
+  }
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public void deletePetById(@PathVariable("id") int id) {
-		this.petService.removePetById(id);
-	}
+  @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+  public void deletePetById(@PathVariable("id") int id) {
+    this.petService.removePetById(id);
+  }
 }

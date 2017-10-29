@@ -1,8 +1,5 @@
 package team.awesome.pet.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,103 +10,104 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
-	@Id
-	@Column(name = "user_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-    private int userID;
-	@Column(name = "user_name")
-    private String userName;
-	@Column(name = "password")
-    private String password;
-	@Column(name = "first_name")
-	private String firstName;
-	@Column(name = "last_name")
-	private String lastName;
-	@Column(name = "phone")
-    private long phone;
-	@Column(name = "email")
-    private String email;
-	@Column(name = "address")
-    private String address;
-	
-	public User() {}
-	
-	public User(int id, String name, String password, String firstName, String lastName, long phone, String email,
-			String address) {
-		super();
-		this.userID = id;
-		this.userName = name;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.phone = phone;
-		this.email = email;
-		this.address = address;
-	}
+  @Id
+  @Column(name = "user_id")
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int userID;
+  @Column(name = "user_name")
+  private String userName;
+  @Column(name = "password")
+  private String password;
+  // Will need a field for confirm_password here?
+  @Column(name = "first_name")
+  private String firstName;
+  @Column(name = "last_name")
+  private String lastName;
+  @Column(name = "phone")
+  private long phone;
+  @Column(name = "email")
+  private String email;
+  @Column(name = "address")
+  private String address;
 
-	public int getId() {
-		return userID;
-	}
+  public User() {}
 
-	public void setId(int id) {
-		this.userID = id;
-	}
+  public User(int id, String name, String password, String firstName, String lastName, long phone,
+      String email, String address) {
+    super();
+    this.userID = id;
+    this.userName = name;
+    this.password = password;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phone = phone;
+    this.email = email;
+    this.address = address;
+  }
 
-	public String getName() {
-		return userName;
-	}
+  public int getId() {
+    return this.userID;
+  }
 
-	public void setName(String name) {
-		this.userName = name;
-	}
+  public void setId(int id) {
+    this.userID = id;
+  }
 
-	public String getPassword() {
-		return password;
-	}
+  public String getUsername() {
+    return this.userName;
+  }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+  public void setUsername(String userName) {
+    this.userName = userName;
+  }
 
-	public String getFirstName() {
-		return firstName;
-	}
+  public String getPassword() {
+    return this.password;
+  }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-	public String getLastName() {
-		return lastName;
-	}
+  public String getFirstName() {
+    return this.firstName;
+  }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-	public long getPhone() {
-		return phone;
-	}
+  public String getLastName() {
+    return this.lastName;
+  }
 
-	public void setPhone(long phone) {
-		this.phone = phone;
-	}
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-	public String getEmail() {
-		return email;
-	}
+  public long getPhone() {
+    return this.phone;
+  }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+  public void setPhone(long phone) {
+    this.phone = phone;
+  }
 
-	public String getAddress() {
-		return address;
-	}
+  public String getEmail() {
+    return this.email;
+  }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getAddress() {
+    return this.address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
 
 }
 
