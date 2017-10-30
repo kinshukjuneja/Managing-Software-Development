@@ -13,19 +13,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Fill out the form</title>
-
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/styles.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 </head>
 
 <body>
-
 <div class="container">
-
     <form:form method="POST" modelAttribute="userForm" class="form-signin">
         <h2 class="form-signin-heading">Create your account</h2>
         <spring:bind path="username">
@@ -35,14 +31,42 @@
                 <form:errors path="username"></form:errors>
             </div>
         </spring:bind>
-
         <spring:bind path="password">
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
                 <form:errors path="password"></form:errors>
             </div>
         </spring:bind>
-
+        <spring:bind path="firstName">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="firstName" class="form-control" placeholder="First Name"></form:input>
+                <form:errors path="firstName"></form:errors>
+            </div>
+        </spring:bind>
+        <spring:bind path="lastName">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="lastName" class="form-control" placeholder="Last Name"></form:input>
+                <form:errors path="lastName"></form:errors>
+            </div>
+        </spring:bind>
+        <spring:bind path="phone">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="tel" path="phone" class="form-control" placeholder="Phone Number"></form:input>
+                <form:errors path="phone"></form:errors>
+            </div>
+        </spring:bind>
+        <spring:bind path="email">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="email" class="form-control" placeholder="Email"></form:input>
+                <form:errors path="email"></form:errors>
+            </div>
+        </spring:bind>
+        <spring:bind path="address">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="address" class="form-control" placeholder="Home Address"></form:input>
+                <form:errors path="address"></form:errors>
+            </div>
+        </spring:bind>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form:form>
 
