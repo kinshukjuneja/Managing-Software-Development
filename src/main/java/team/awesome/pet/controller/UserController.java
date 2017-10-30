@@ -1,5 +1,12 @@
 package team.awesome.pet.controller;
 
+/**
+ * ctran - Will not need this class since we're not sure about roles Thus using the other class
+ * UsersController is more benefit in term of routing and setting up front page for this project.
+ * Will leave this class here for now as a backup.
+ */
+
+
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
