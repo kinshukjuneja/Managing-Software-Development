@@ -51,13 +51,13 @@
         </spring:bind>
         <spring:bind path="phone">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="tel" path="phone" class="form-control" placeholder="Phone Number"></form:input>
+                <form:input type="number" path="phone" class="form-control" placeholder="Phone Number" value=""></form:input>
                 <form:errors path="phone"></form:errors>
             </div>
         </spring:bind>
         <spring:bind path="email">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="email" class="form-control" placeholder="Email"></form:input>
+                <form:input type="email" path="email" class="form-control" placeholder="Email"></form:input>
                 <form:errors path="email"></form:errors>
             </div>
         </spring:bind>
