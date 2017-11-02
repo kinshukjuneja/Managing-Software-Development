@@ -18,6 +18,10 @@ import team.awesome.pet.service.PetService;
 public class PetController {
 
   @Autowired
+  public PetController(PetService petService) {
+    this.petService = petService;
+  }
+
   private PetService petService;
   // private PetRepository petRepo;
 
