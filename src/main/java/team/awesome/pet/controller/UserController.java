@@ -1,5 +1,12 @@
 package team.awesome.pet.controller;
 
+/**
+ * ctran - Will not need this class since we're not sure about roles Thus using the other class
+ * UsersController is more benefit in term of routing and setting up front page for this project.
+ * Will leave this class here for now as a backup.
+ */
+
+
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +21,11 @@ import team.awesome.pet.model.User;
 import team.awesome.pet.service.UserService;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 
   @Autowired
+  // private UserRepository userRepository;
   private UserService userService;
 
   @RequestMapping(method = RequestMethod.GET)
@@ -32,12 +40,12 @@ public class UserController {
 
   @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void updateUser(@RequestBody User user) {
-    this.userService.updateUser(user);
+    this.userService.insertUser(user);
   }
 
   @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void insertUser(@RequestBody User user) {
-    this.userService.insertUser(user);
+    this.userService.updateUser(user);
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

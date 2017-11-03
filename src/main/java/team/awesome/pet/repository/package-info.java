@@ -5,4 +5,4 @@
  * @author Chuong Tran
  *
  */
-package team.awesome.pet.dao.jpa;
+package team.awesome.pet.repository;

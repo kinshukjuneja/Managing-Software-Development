@@ -1,75 +1,71 @@
 package team.awesome.pet.model;
 
-import java.math.BigInteger;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Track")
 public class Track {
-    private BigInteger trackId;
-    private int petId;
-    private long time;
-    private String location;
+	@Id
+	@Column(name = "track_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int trackId;
+	@ManyToOne
+	@JoinColumn(name = "pet_id")
+	private Pet pet;
+	@Column(name = "record_time")
+	private Date recordTime;
+	@Column(name = "record_location")
+	private String recordLocation;
+	
+	public Track(int trackId, Pet pet, Date recordTime, String recordLocation) {
+		super();
+		this.trackId = trackId;
+		this.pet = pet;
+		this.recordTime = recordTime;
+		this.recordLocation = recordLocation;
+	}
 
-    public Track(BigInteger trackId, int petId, long time, String location) {
-        this.trackId = trackId;
-        this.petId = petId;
-        this.time = System.currentTimeMillis();
-        this.location = location;
-    }
+	public Track() {}
 
-    public Track() {}
+	public int getTrackId() {
+		return trackId;
+	}
 
-    /**
-     * @return the trackId
-     */
-    public BigInteger getTrackId() {
-        return trackId;
-    }
+	public void setTrackId(int trackId) {
+		this.trackId = trackId;
+	}
 
-    /**
-     * @param trackId the trackId to set
-     */
-    public void setTrackId(BigInteger trackId) {
-        this.trackId = trackId;
-    }
+	public Pet getPet() {
+		return pet;
+	}
 
-    /**
-     * @return the petId of a pet
-     */
-    public int getPetId() {
-        return petId;
-    }
+	public void setPet(Pet pet) {
+		this.pet = pet;
+	}
 
-    /**
-     * @param petId the petId to set
-     */
-    public void setPetId(int petId) {
-        this.petId = petId;
-    }
+	public Date getRecordTime() {
+		return recordTime;
+	}
 
-    /**
-     * @return the time
-     */
-    public long getTime() {
-        return time;
-    }
+	public void setRecordTime(Date recordTime) {
+		this.recordTime = recordTime;
+	}
 
-    /**
-     * @param time the time to set
-     */
-    public void setTime(long time) {
-        this.time = time;
-    }
+	public String getRecordLocation() {
+		return recordLocation;
+	}
 
-    /**
-     * @return the location of a pet
-     */
-    public String getLocation() {
-        return location;
-    }
+	public void setRecordLocation(String recordLocation) {
+		this.recordLocation = recordLocation;
+	}
 
-    /**
-     * @param location the location to set as a String in Coordinates(Latitude and Longitude)
-     */
-    public void setLocation(String location) {
-        this.location = location;
-    }
 }

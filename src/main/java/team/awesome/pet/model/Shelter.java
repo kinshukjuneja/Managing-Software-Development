@@ -1,114 +1,111 @@
 package team.awesome.pet.model;
 
-import java.math.BigInteger;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Shelter extends Name {
-  // private int id;
-  // private String name;
-  private BigInteger shelterId;
-  private String description;
-  private boolean status;
-  private int capacity;
-  private String city;
-  private int zipCode;
+@Entity
+@Table(name = "shelter")
+public class Shelter {
+	@Id
+	@Column(name = "shelter_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int shelterId;
+	@Column(name = "shelter_name")
+	private String shelterName;
+	@Column(name = "description")
+	private String description;
+	@Column(name = "status")
+	private boolean status;
+	@Column(name = "capacity")
+	private int capacity;
+	@Column(name = "city")
+	private String city;
+	@Column(name = "zipcode")
+	private int zipCode;
+	@Column(name = "location")
+	private String location;
 
-  public Shelter() {
+	public Shelter() {}
 
-  }
+	public Shelter(int shelterId, String shelterName, String description, boolean status, int capacity, String city,
+			int zipCode, String location) {
+		super();
+		this.shelterId = shelterId;
+		this.shelterName = shelterName;
+		this.description = description;
+		this.status = status;
+		this.capacity = capacity;
+		this.city = city;
+		this.zipCode = zipCode;
+		this.location = location;
+	}
 
-  public Shelter(BigInteger shelterId, String description, boolean status, int capacity,
-      String city, int zipCode) {
-    super();
-    this.shelterId = shelterId;
-    this.description = description;
-    this.status = status;
-    this.capacity = capacity;
-    this.city = city;
-    this.zipCode = zipCode;
-  }
+	public int getShelterId() {
+		return shelterId;
+	}
 
-  /**
-   * @return the shelterId
-   */
-  public BigInteger getShelterId() {
-    return this.shelterId;
-  }
+	public void setShelterId(int shelterId) {
+		this.shelterId = shelterId;
+	}
 
-  /**
-   * @param shelterId the shelterId to set
-   */
-  public void setShelterId(BigInteger shelterId) {
-    this.shelterId = shelterId;
-  }
+	public String getShelterName() {
+		return shelterName;
+	}
 
-  /**
-   * @return the description
-   */
-  public String getDescription() {
-    return this.description;
-  }
+	public void setShelterName(String shelterName) {
+		this.shelterName = shelterName;
+	}
 
-  /**
-   * @param description the description to set
-   */
-  public void setDescription(String description) {
-    this.description = description;
-  }
+	public String getDescription() {
+		return description;
+	}
 
-  /**
-   * @return the status
-   */
-  public boolean isStatus() {
-    return this.status;
-  }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-  /**
-   * @param status the status to set
-   */
-  public void setStatus(boolean status) {
-    this.status = status;
-  }
+	public boolean isStatus() {
+		return status;
+	}
 
-  /**
-   * @return the capacity
-   */
-  public int getCapacity() {
-    return this.capacity;
-  }
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 
-  /**
-   * @param capacity the capacity to set
-   */
-  public void setCapacity(int capacity) {
-    this.capacity = capacity;
-  }
+	public int getCapacity() {
+		return capacity;
+	}
 
-  /**
-   * @return the city
-   */
-  public String getCity() {
-    return this.city;
-  }
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
 
-  /**
-   * @param city the city to set
-   */
-  public void setCity(String city) {
-    this.city = city;
-  }
+	public String getCity() {
+		return city;
+	}
 
-  /**
-   * @return the zipCode
-   */
-  public int getZipCode() {
-    return this.zipCode;
-  }
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-  /**
-   * @param zipCode the zipCode to set
-   */
-  public void setZipCode(int zipCode) {
-    this.zipCode = zipCode;
-  }
+	public int getZipCode() {
+		return zipCode;
+	}
 
+	public void setZipCode(int zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
 }
