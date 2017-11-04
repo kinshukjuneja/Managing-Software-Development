@@ -13,6 +13,11 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * This acts as a UI for the project where all the API calls will be visible to be used
+ *
+ *
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfigApplication {
@@ -28,7 +33,7 @@ public class SwaggerConfigApplication {
     // return Predicates.or(PathSelectors.regex("/pets.*"));
     return Predicates.or(PathSelectors.regex("/pets.*"), PathSelectors.regex("/pet-types.*"),
         PathSelectors.regex("/shelters.*"), PathSelectors.regex("/users.*"),
-        PathSelectors.regex("/track.*"));
+        PathSelectors.regex("/tracks.*"));
   }
 
   private ApiInfo apiInfo() {

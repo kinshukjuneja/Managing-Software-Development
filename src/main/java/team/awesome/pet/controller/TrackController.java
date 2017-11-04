@@ -14,7 +14,7 @@ import team.awesome.pet.model.Track;
 import team.awesome.pet.service.TrackService;
 
 @RestController
-@RequestMapping("/track")
+@RequestMapping("/tracks")
 public class TrackController {
 
   @Autowired

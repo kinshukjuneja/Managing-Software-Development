@@ -60,6 +60,6 @@ public class UsersController {
 
   @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
   public String welcome(Model model) {
-    return "welcome";
+    return "Welcome to Pet Rescue Organization and your name is: ";
   }
 }

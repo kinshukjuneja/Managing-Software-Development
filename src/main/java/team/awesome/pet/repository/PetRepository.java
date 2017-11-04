@@ -4,6 +4,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import team.awesome.pet.model.Pet;
 
+
+/**
+ * This is an interface of Pet Repository where all the functions will be inherited from calling Jpa
+ * Repository. Thus no need for explicit calling those functions here but rather at the Service
+ * layer.
+ *
+ *
+ */
 public interface PetRepository extends JpaRepository<Pet, Integer> {
 
 }
