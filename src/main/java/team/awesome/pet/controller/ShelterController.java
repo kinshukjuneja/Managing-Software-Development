@@ -15,7 +15,7 @@ import team.awesome.pet.service.ShelterService;
 
 /**
  * This represents the Controller layer for Shelter which will be used as a mean to communicate to
- * the Service layer to handle all the HTTP request.
+ * the Service layer to handle all the HTTP request
  *
  */
 @RestController
@@ -27,9 +27,9 @@ public class ShelterController {
   private ShelterService shelterService;
 
   /**
-   * HTTP GET method will return all the shelters in the existing Collection.
+   * HTTP GET method will return all the shelters in the existing Collection
    *
-   * @return all the shelters it can find.
+   * @return all the shelters it can find
    */
   @RequestMapping(method = RequestMethod.GET)
   public Collection<Shelter> getAllShelter() {
@@ -38,7 +38,7 @@ public class ShelterController {
   }
 
   /**
-   * HTTP GET method will return the specific shelter given the id.
+   * HTTP GET method will return the specific shelter given the id
    *
    * @param id the integer id that will be used to find a shelter
    * @return the shelter with a matching id
@@ -50,9 +50,9 @@ public class ShelterController {
   }
 
   /**
-   * HTTP POST method will help to add a new shelter to the existing one.
+   * HTTP POST method will help to add a new shelter to the existing one
    *
-   * @param shelter that needs to be added.
+   * @param shelter that needs to be added
    */
   @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void insertShelter(@RequestBody Shelter shelter) {
@@ -63,7 +63,7 @@ public class ShelterController {
   /**
    * HTTP PUT method will help to update the existing shelter with new information
    *
-   * @param shelter that needs to be updated
+   * @param shelter a shelter that needs to be updated
    */
   @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void updateShelter(@RequestBody Shelter shelter) {
@@ -74,7 +74,7 @@ public class ShelterController {
   /**
    * HTTP DELETE method will help to delete an existing shelter given the id
    *
-   * @param id of the shelter that will be removed from the record
+   * @param id an id of the shelter that will be removed from the record
    */
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
   public void deleteShelterById(@PathVariable("id") int id) {

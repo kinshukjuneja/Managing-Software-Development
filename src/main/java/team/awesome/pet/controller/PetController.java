@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import team.awesome.pet.model.Pet;
 import team.awesome.pet.service.PetService;
 
+/**
+ * This represents the Controller layer for Pet which will be used as a mean to communicate to the
+ * Service layer to handle all the HTTP request
+ *
+ */
 @RestController
 @RequestMapping("/pets")
 public class PetController {
@@ -25,30 +30,56 @@ public class PetController {
   private PetService petService;
   // private PetRepository petRepo;
 
+  /**
+   * HTTP GET method will return all the pets in the existing Collection
+   *
+   * @return all the pets it can find
+   */
   @RequestMapping(method = RequestMethod.GET)
   public Collection<Pet> getAllPets() {
     return this.petService.getAllPets();
     // return this.petRepo.findAll();
   }
 
+  /**
+   * HTTP GET method will return the specific pet given the id
+   *
+   * @param id the integer id that will be used to find a pet
+   * @return the pet with a matching id
+   */
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   public Pet getPetById(@PathVariable("id") int id) {
     return this.petService.getPetById(id);
     // return this.petRepo.findOne(id);
   }
 
+  /**
+   * HTTP PUT method will help to update the existing pet with new information
+   *
+   * @param pet a pet that needs to be updated
+   */
   @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void updatePet(@RequestBody Pet pet) {
     this.petService.updatePet(pet);
     // this.petRepo.save(pet);
   }
 
+  /**
+   * HTTP POST method will help to add a new pet to the existing one
+   *
+   * @param pet a new pet that needs to be added
+   */
   @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void insertPet(@RequestBody Pet pet) {
     this.petService.insertPet(pet);
     // this.petRepo.save(pet);
   }
 
+  /**
+   * HTTP DELETE method will help to delete an existing pet given the id
+   *
+   * @param id an id of the pet that will be removed from the record
+   */
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
   public void deletePetById(@PathVariable("id") int id) {
     this.petService.removePetById(id);

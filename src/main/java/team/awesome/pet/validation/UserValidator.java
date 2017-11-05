@@ -9,6 +9,11 @@ import org.springframework.validation.Validator;
 import team.awesome.pet.model.User;
 import team.awesome.pet.service.UserNewService;
 
+/**
+ * Represents a validated way to check whether an user can log in with the current username and
+ * password
+ *
+ */
 @Service
 public class UserValidator implements Validator {
 
