@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Represents a shelter where all lost pets can be found
+ *
+ */
 @Entity
 @Table(name = "shelter")
 public class Shelter {

@@ -3,7 +3,6 @@ package team.awesome.pet.model;
 /**
  * This creates a base/share class for other objects that requires this property.
  *
- * @author Chuong Tran
  */
 
 public class Name {

@@ -14,6 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
 import team.awesome.pet.model.User;
 import team.awesome.pet.repository.UserRepository;
 
+/**
+ * Represents an implementation of an user's service to find user by username
+ *
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
@@ -24,9 +28,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   @Transactional(readOnly = true)
   public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
     User user = this.userRepo.findByUserName(userName);
-    /**
-     * Might need to create roles here if needed
-     */
+    // Might need to create roles here if needed
     Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
     return new org.springframework.security.core.userdetails.User(user.getUsername(),
         user.getPassword(), grantedAuthorities);

@@ -11,61 +11,105 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Represents a track class to help find a pet
+ *
+ */
 @Entity
 @Table(name = "Track")
 public class Track {
-	@Id
-	@Column(name = "track_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int trackId;
-	@ManyToOne
-	@JoinColumn(name = "pet_id")
-	private Pet pet;
-	@Column(name = "record_time")
-	private Date recordTime;
-	@Column(name = "record_location")
-	private String recordLocation;
-	
-	public Track(int trackId, Pet pet, Date recordTime, String recordLocation) {
-		super();
-		this.trackId = trackId;
-		this.pet = pet;
-		this.recordTime = recordTime;
-		this.recordLocation = recordLocation;
-	}
+  @Id
+  @Column(name = "track_id")
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int trackId;
+  @ManyToOne
+  @JoinColumn(name = "pet_id")
+  private Pet pet;
+  @Column(name = "record_time")
+  private Date recordTime;
+  @Column(name = "record_location")
+  private String recordLocation;
 
-	public Track() {}
+  /**
+   * Create a track to record where a pet has been
+   *
+   * @param trackId the id of a track
+   * @param pet the pet
+   * @param recordTime record the time of a pet of places it has been to
+   * @param recordLocation record the location of where pet has been to
+   */
+  public Track(int trackId, Pet pet, Date recordTime, String recordLocation) {
+    super();
+    this.trackId = trackId;
+    this.pet = pet;
+    this.recordTime = recordTime;
+    this.recordLocation = recordLocation;
+  }
 
-	public int getTrackId() {
-		return trackId;
-	}
+  public Track() {}
 
-	public void setTrackId(int trackId) {
-		this.trackId = trackId;
-	}
+  /**
+   *
+   * @return the id of a track
+   */
+  public int getTrackId() {
+    return this.trackId;
+  }
 
-	public Pet getPet() {
-		return pet;
-	}
+  /**
+   *
+   * @param trackId the id of a track to be set
+   */
+  public void setTrackId(int trackId) {
+    this.trackId = trackId;
+  }
 
-	public void setPet(Pet pet) {
-		this.pet = pet;
-	}
+  /**
+   *
+   * @return the pet
+   */
+  public Pet getPet() {
+    return this.pet;
+  }
 
-	public Date getRecordTime() {
-		return recordTime;
-	}
+  /**
+   *
+   * @param pet the pet to be set
+   */
+  public void setPet(Pet pet) {
+    this.pet = pet;
+  }
 
-	public void setRecordTime(Date recordTime) {
-		this.recordTime = recordTime;
-	}
+  /**
+   *
+   * @return the recording time of places a pet has been to
+   */
+  public Date getRecordTime() {
+    return this.recordTime;
+  }
 
-	public String getRecordLocation() {
-		return recordLocation;
-	}
+  /**
+   *
+   * @param recordTime the record time to be set
+   */
+  public void setRecordTime(Date recordTime) {
+    this.recordTime = recordTime;
+  }
 
-	public void setRecordLocation(String recordLocation) {
-		this.recordLocation = recordLocation;
-	}
+  /**
+   *
+   * @return the places where a pet has been to
+   */
+  public String getRecordLocation() {
+    return this.recordLocation;
+  }
+
+  /**
+   *
+   * @param recordLocation the visited places of a pet to be set to
+   */
+  public void setRecordLocation(String recordLocation) {
+    this.recordLocation = recordLocation;
+  }
 
 }

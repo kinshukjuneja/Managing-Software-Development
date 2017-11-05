@@ -13,7 +13,6 @@ import team.awesome.pet.repository.ShelterRepository;
  * in the Repository layer and also will be used to get information from the Controller layer.
  *
  */
-
 @Service
 public class ShelterService {
   @Autowired
