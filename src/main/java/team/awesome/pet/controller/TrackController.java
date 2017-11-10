@@ -1,45 +1,54 @@
 package team.awesome.pet.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-import team.awesome.pet.model.Track;
-import team.awesome.pet.service.TrackService;
-import java.math.BigInteger;
 import java.util.Collection;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import team.awesome.pet.model.Track;
+import team.awesome.pet.service.TrackService;
+
 @RestController
-@RequestMapping("/tracks")
+@RequestMapping("/track")
 public class TrackController {
-    @Autowired
-    public TrackController(TrackService trackService) {
-        this.trackService = trackService;
-    }
 
-    private TrackService trackService;
+  @Autowired
+  private TrackService trackService;
+  // private TrackRepository trackRepo;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Collection<Track> getAllTracks() {
-        return this.trackService.getAllTracks();
-    }
+  @RequestMapping(method = RequestMethod.GET)
+  public Collection<Track> getAllTracks() {
+    return this.trackService.getAllTracks();
+    // return this.trackRepo.findAll();
+  }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Track getTrackById(@PathVariable("id") BigInteger id) {
-        return this.trackService.getTrackById(id);
-    }
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public Track getTrackById(@PathVariable("id") int id) {
+    return this.trackService.getTrackById(id);
+    // return this.trackRepo.findOne(id);
+  }
 
-    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void updateTrack(@RequestBody Track track) {
-        this.trackService.updateTrack(track);
-    }
+  @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+  public void updateTrack(@RequestBody Track track) {
+    this.trackService.updateTrack(track);
+    // this.trackRepo.save(track);
 
-    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void insertTrack(@RequestBody Track track) {
-        this.trackService.insertTrack(track);
-    }
+  }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteTrackById(@PathVariable("id") BigInteger id) {
-        this.trackService.removeTrackById(id);
-    }
+  @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+  public void insertTrack(@RequestBody Track track) {
+    this.trackService.insertTrack(track);
+    // this.trackRepo.save(track);
+  }
+
+  @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+  public void deleteTrackById(@PathVariable("id") int id) {
+    this.trackService.removeTrack(id);
+    // this.trackRepo.delete(id);
+  }
 }

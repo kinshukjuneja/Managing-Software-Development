@@ -24,9 +24,9 @@ public class MockPetTypeDaoImp implements PetTypeDao {
       private static final long serialVersionUID = 1L;
 
       {
-        put(1, new PetType("dog"));
-        put(2, new PetType("cat"));
-        put(3, new PetType("other"));
+//        put(1, new PetType("dog"));
+//        put(2, new PetType("cat"));
+//        put(3, new PetType("other"));
       }
     };
   }

@@ -8,6 +8,9 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import team.awesome.pet.controller.PetController;
 import team.awesome.pet.model.Pet;
+import team.awesome.pet.model.PetType;
+import team.awesome.pet.model.Shelter;
+import team.awesome.pet.model.User;
 import team.awesome.pet.service.PetService;
 import java.math.BigInteger;
 import java.util.*;
@@ -27,7 +30,8 @@ public class PetControllerTest {
     public void init() {
         MockitoAnnotations.initMocks(this);
         petController = new PetController(mockPetService);
-        pet = new Pet(1, "tommy", new BigInteger("1234567890"));
+        pet = new Pet();
+        pet.setName("tommy");
         expected = new ArrayList<>();
     }
 

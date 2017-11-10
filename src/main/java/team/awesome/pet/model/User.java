@@ -1,128 +1,113 @@
 package team.awesome.pet.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "users")
 public class User {
-    private int id;
-    private String name;
-    private String password;
-    private long phone;
-    private String email;
-    private String address;
-   // private List<Pet> claimPets;
+  @Id
+  @Column(name = "user_id")
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int userID;
+  @Column(name = "user_name")
+  private String userName;
+  @Column(name = "password")
+  private String password;
+  // Will need a field for confirm_password here?
+  @Column(name = "first_name")
+  private String firstName;
+  @Column(name = "last_name")
+  private String lastName;
+  @Column(name = "phone")
+  private long phone;
+  @Column(name = "email")
+  private String email;
+  @Column(name = "address")
+  private String address;
 
-    public User(int id, String name, String password) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        //claimPets = new ArrayList<>();
-    }
+  public User() {}
 
-    public User() {}
+  public User(int id, String name, String password, String firstName, String lastName, long phone,
+      String email, String address) {
+    super();
+    this.userID = id;
+    this.userName = name;
+    this.password = password;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.phone = phone;
+    this.email = email;
+    this.address = address;
+  }
 
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return this.id;
-    }
+  public int getId() {
+    return this.userID;
+  }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+  public void setId(int id) {
+    this.userID = id;
+  }
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return this.name;
-    }
+  public String getUsername() {
+    return this.userName;
+  }
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setUsername(String userName) {
+    this.userName = userName;
+  }
 
-    /**
-     *  @return the password
-     */
-    public String getPassword() {
-        return this.password;
-    }
+  public String getPassword() {
+    return this.password;
+  }
 
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
+  public String getFirstName() {
+    return this.firstName;
+  }
 
-    /**
-     *
-     * @return the phone
-     */
-    public Long getPhone() {
-        return phone;
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    /**
-     * @param phone the phone to set
-     */
-    public void setPhone(Long phone) {
-        this.phone = phone;
-    }
+  public String getLastName() {
+    return this.lastName;
+  }
 
-    /**
-     *
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public long getPhone() {
+    return this.phone;
+  }
 
-    /**
-     *
-     * @return the address
-     */
-    public String getAddress() {
-        return address;
-    }
+  public void setPhone(long phone) {
+    this.phone = phone;
+  }
 
-    /**
-     * @param address the address to set
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
+  public String getEmail() {
+    return this.email;
+  }
 
-//    /**
-//     *
-//     * @return list of claimPets
-//     */
-//    public List<Pet> getClaimPets() {
-//        return claimPets;
-//    }
-//
-//    /**
-//     * @param pet the pet claimed by user are added
-//     */
-//    public void addClaimPets(Pet pet) {
-//       claimPets.add(pet);
-//    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getAddress() {
+    return this.address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
 
 }
 

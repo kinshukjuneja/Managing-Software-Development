@@ -17,9 +17,9 @@ public class SqlShelterDaoImp implements ShelterDao {
   @Override
   public Collection<Shelter> getAllShelters() {
     return new ArrayList<Shelter>() {
-      {
-        add(new Shelter(new BigInteger("12345"), "Seattle-Shelter", true, 10000, "Seattle", 98005));
-      }
+//      {
+//        add(new Shelter(new BigInteger("12345"), "Seattle-Shelter", true, 10000, "Seattle", 98005));
+//      }
     };
   }
 
