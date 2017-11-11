@@ -1,10 +1,12 @@
 package team.awesome.pet.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import team.awesome.pet.model.Pet;
 import team.awesome.pet.model.Track;
 import team.awesome.pet.repository.TrackRepository;
 
@@ -68,4 +70,9 @@ public class TrackService {
   public void removeTrack(int id) {
     this.trackRepository.delete(id);
   }
+  
+  public List<Track> findTrackByPet(int petId) {
+	  return trackRepository.findByPet_PetId(petId);
+  }
+
 }
