@@ -1,6 +1,10 @@
 package team.awesome.pet.repository;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import team.awesome.pet.model.Pet;
 
@@ -12,6 +16,5 @@ import team.awesome.pet.model.Pet;
  *
  *
  */
-public interface PetRepository extends JpaRepository<Pet, Integer> {
-
+public interface PetRepository extends JpaRepository<Pet, Integer>, JpaSpecificationExecutor<Pet> {
 }
