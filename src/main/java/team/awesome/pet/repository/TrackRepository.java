@@ -1,5 +1,7 @@
 package team.awesome.pet.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import team.awesome.pet.model.Track;
@@ -12,5 +14,5 @@ import team.awesome.pet.model.Track;
  *
  */
 public interface TrackRepository extends JpaRepository<Track, Integer> {
-
+	List<Track> findByPet_PetId(int petId);
 }
