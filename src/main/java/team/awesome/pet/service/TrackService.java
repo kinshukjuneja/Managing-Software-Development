@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import team.awesome.pet.model.Pet;
 import team.awesome.pet.model.Track;
 import team.awesome.pet.repository.TrackRepository;
 
@@ -70,9 +69,16 @@ public class TrackService {
   public void removeTrack(int id) {
     this.trackRepository.delete(id);
   }
-  
+
+  /**
+   * This method will use the existing method created in the TrackRepository to find the list of
+   * tracks given a petId of where a pet has
+   *
+   * @param petId the petId that will be used to find the list of tracks
+   * @return list of tracks with the matching petId {@code petId} of where a pet has been
+   */
   public List<Track> findTrackByPet(int petId) {
-	  return trackRepository.findByPet_PetId(petId);
+    return this.trackRepository.findByPet_PetId(petId);
   }
 
 }

@@ -1,9 +1,5 @@
 package team.awesome.pet.dao;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
-import team.awesome.pet.model.User;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,5 @@
 package team.awesome.pet.dao;
 
-import java.math.BigInteger;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,9 +22,9 @@ public class MockPetDaoImp implements PetDao {
       private static final long serialVersionUID = 1L;
 
       {
-//        put(1, new Pet(1, "Mimi", new BigInteger("1234567890")));
-//        put(2, new Pet(2, "Max", new BigInteger("1234567891")));
-//        put(3, new Pet(3, "Lilac", new BigInteger("1234567892")));
+        // put(1, new Pet(1, "Mimi", new BigInteger("1234567890")));
+        // put(2, new Pet(2, "Max", new BigInteger("1234567891")));
+        // put(3, new Pet(3, "Lilac", new BigInteger("1234567892")));
       }
     };
   }
@@ -42,9 +41,9 @@ public class MockPetDaoImp implements PetDao {
 
   @Override
   public void updatePet(Pet pet) {
-    Pet p = MockPetDaoImp.pets.get(pet.getPetId());
-//    p.setName(pet.getName());
-//    p.setShelterId(pet.getShelterId());
+    // Pet p = MockPetDaoImp.pets.get(pet.getPetId());
+    // p.setName(pet.getName());
+    // p.setShelterId(pet.getShelterId());
     MockPetDaoImp.pets.put(pet.getPetId(), pet);
   }
 

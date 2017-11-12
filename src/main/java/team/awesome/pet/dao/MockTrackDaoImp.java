@@ -45,7 +45,7 @@ public class MockTrackDaoImp implements TrackDao {
 
   @Override
   public void updateTrack(Track track) {
-    Track t = MockTrackDaoImp.tracks.get(track.getTrackId());
+    // Track t = MockTrackDaoImp.tracks.get(track.getTrackId());
     // t.setPetId(track.getPetId());
     // t.setTime(track.getTime());
     // t.setLocation(track.getLocation());

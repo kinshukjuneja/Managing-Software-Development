@@ -3,7 +3,6 @@ package team.awesome.pet.controller;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,21 +41,22 @@ public class PetController {
     return this.petService.getAllPets();
     // return this.petRepo.findAll();
   }
-  
+
   @RequestMapping(value = "/features", method = RequestMethod.GET)
   public Collection<Pet> findPetsByFeatures(
-		  @RequestParam(value = "name", required = false) String name,
-		  @RequestParam(value = "ownerId", required = false) String ownerId,
-		  @RequestParam(value = "petType", required = false) String typeId,
-		  @RequestParam(value = "shelterId", required = false) String shelterId,
-		  @RequestParam(value = "length", required = false) String length,
-		  @RequestParam(value = "weight", required = false) String weight,
-		  @RequestParam(value = "color", required = false) String color,
-		  @RequestParam(value = "health", required = false) String health,
-		  @RequestParam(value = "location", required = false) String location
-		  
-		  ) {
-	  return this.petService.findPetsByFeatures(name, ownerId, typeId, shelterId, length, weight, color, health, location);
+      @RequestParam(value = "name", required = false) String name,
+      @RequestParam(value = "ownerId", required = false) String ownerId,
+      @RequestParam(value = "petType", required = false) String typeId,
+      @RequestParam(value = "shelterId", required = false) String shelterId,
+      @RequestParam(value = "length", required = false) String length,
+      @RequestParam(value = "weight", required = false) String weight,
+      @RequestParam(value = "color", required = false) String color,
+      @RequestParam(value = "health", required = false) String health,
+      @RequestParam(value = "location", required = false) String location
+
+  ) {
+    return this.petService.findPetsByFeatures(name, ownerId, typeId, shelterId, length, weight,
+        color, health, location);
   }
 
   /**
@@ -103,5 +103,5 @@ public class PetController {
     this.petService.removePetById(id);
     // this.petRepo.delete(id);
   }
-  
+
 }

@@ -1,7 +1,6 @@
 package team.awesome.pet.controller;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import team.awesome.pet.model.Pet;
 import team.awesome.pet.model.Track;
 import team.awesome.pet.service.TrackService;
 
@@ -39,11 +37,11 @@ public class TrackController {
     return this.trackService.getAllTracks();
     // return this.trackRepo.findAll();
   }
-  
+
   @RequestMapping(value = "/pets", method = RequestMethod.GET)
   public Collection<Track> findTrackByPet(
-		  @RequestParam(value = "petId", required = false) int petId) {
-	  return this.trackService.findTrackByPet(petId);
+      @RequestParam(value = "petId", required = false) int petId) {
+    return this.trackService.findTrackByPet(petId);
   }
 
   /**

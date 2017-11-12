@@ -36,6 +36,7 @@ public class SwaggerConfigApplication {
         PathSelectors.regex("/tracks.*"));
   }
 
+  @SuppressWarnings("deprecation")
   private ApiInfo apiInfo() {
     return new ApiInfoBuilder().title("Springfox Pet Rescue Organization API")
         .description("Helped to relocate lost pet and return to its owner")

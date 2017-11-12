@@ -1,5 +1,7 @@
 package team.awesome.pet.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import team.awesome.pet.model.Track;
@@ -12,5 +14,14 @@ import team.awesome.pet.model.Track;
  *
  */
 public interface TrackRepository extends JpaRepository<Track, Integer> {
+
+  /**
+   * This is an extra method to help finding the list of tracks given a petId of where a pet has
+   * been
+   *
+   * @param petId the petId that will be used to find the list of tracks
+   * @return list of tracks with the matching petId {@code petId} of where a pet has been
+   */
+  List<Track> findByPet_PetId(int petId);
 
 }
