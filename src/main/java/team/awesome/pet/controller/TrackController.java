@@ -27,6 +27,10 @@ public class TrackController {
   private TrackService trackService;
   // private TrackRepository trackRepo;
 
+  public TrackController(TrackService trackService) {
+    this.trackService = trackService;
+  }
+
   /**
    * HTTP GET method will return all the tracks in the existing Collection
    *

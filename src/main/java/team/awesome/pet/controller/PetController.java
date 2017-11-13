@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import team.awesome.pet.model.Pet;
 import team.awesome.pet.service.PetService;
 
@@ -22,14 +21,13 @@ import team.awesome.pet.service.PetService;
 @RestController
 @RequestMapping("/pets")
 public class PetController {
-
   @Autowired
+  private PetService petService;
+  // private PetRepository petRepo;
+
   public PetController(PetService petService) {
     this.petService = petService;
   }
-
-  private PetService petService;
-  // private PetRepository petRepo;
 
   /**
    * HTTP GET method will return all the pets in the existing Collection
@@ -103,5 +101,4 @@ public class PetController {
     this.petService.removePetById(id);
     // this.petRepo.delete(id);
   }
-
 }

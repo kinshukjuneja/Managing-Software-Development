@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import team.awesome.pet.model.Shelter;
+import team.awesome.pet.service.PetService;
 import team.awesome.pet.service.ShelterService;
 
 /**
@@ -21,10 +22,13 @@ import team.awesome.pet.service.ShelterService;
 @RestController
 @RequestMapping("/shelters")
 public class ShelterController {
-
   @Autowired
-  // private ShelterRepository shelterRepo;
   private ShelterService shelterService;
+  // private ShelterRepository shelterRepo;
+
+  public ShelterController(ShelterService shelterService) {
+    this.shelterService = shelterService;
+  }
 
   /**
    * HTTP GET method will return all the shelters in the existing Collection
