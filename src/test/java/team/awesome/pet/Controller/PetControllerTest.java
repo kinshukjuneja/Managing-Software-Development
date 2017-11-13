@@ -7,6 +7,8 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import team.awesome.pet.controller.PetController;
 import team.awesome.pet.model.Pet;
+import team.awesome.pet.model.PetType;
+import team.awesome.pet.model.User;
 import team.awesome.pet.service.PetService;
 import java.util.*;
 import static org.junit.Assert.assertEquals;
@@ -16,15 +18,22 @@ public class PetControllerTest {
 
     @Mock
     private PetService mockPetService;
-    Pet pet;
+    private Pet pet;
 
     @Before
     public void init() {
         MockitoAnnotations.initMocks(this);
         petController = new PetController(mockPetService);
-        pet = new Pet();
-        pet.setName("Kaizer");
-        pet.setPetId(1);
+        pet = Pet.builder().
+                petId(1).
+                petColor("brown").
+                petLength(12.5).
+                petWeight(100).
+                name("Kaizer").
+                currentLocation("Seattle").
+                owner(new User()).
+                petType(new PetType()).
+                build();
     }
 
     @Test
@@ -49,7 +58,6 @@ public class PetControllerTest {
         petController.updatePet(pet);
         Mockito.verify(mockPetService, Mockito.times(1)).updatePet(pet);
     }
-
     @Test
     public void testInsertPet() {
         petController.insertPet(pet);
@@ -60,5 +68,14 @@ public class PetControllerTest {
     public void testDeletePetById() {
         petController.deletePetById(1);
         Mockito.verify(mockPetService, Mockito.times(1)).removePetById(1);
+    }
+
+    @Test
+    public void testfindPetsByFeatures() {
+        Collection<Pet> expected = new ArrayList<>();
+        expected.add(pet);
+        Mockito.when(mockPetService.findPetsByFeatures("Kaizer", null, null, null, null, null, "brown", null, null)).thenReturn(expected);
+        assertEquals(expected, petController.findPetsByFeatures("Kaizer", null, null, null, null, null, "brown", null, null));
+        Mockito.verify(mockPetService, Mockito.times(1)).findPetsByFeatures("Kaizer", null, null, null, null, null, "brown", null, null);
     }
 }
