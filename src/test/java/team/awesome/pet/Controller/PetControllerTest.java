@@ -71,7 +71,7 @@ public class PetControllerTest {
     }
 
     @Test
-    public void testfindPetsByFeatures() {
+    public void testFindPetsByFeatures() {
         Collection<Pet> expected = new ArrayList<>();
         expected.add(pet);
         Mockito.when(mockPetService.findPetsByFeatures("Kaizer", null, null, null, null, null, "brown", null, null)).thenReturn(expected);
