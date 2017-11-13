@@ -26,6 +26,10 @@ public class PetTypeController {
   private PetTypeService petTypeService;
   // private TypeRepository typeRepo;
 
+  public PetTypeController(PetTypeService petTypeService) {
+    this.petTypeService = petTypeService;
+  }
+
   /**
    * HTTP GET method will return all the pet types in the existing Collection
    *
