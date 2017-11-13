@@ -1,5 +1,6 @@
 package team.awesome.pet.model;
 
+import lombok.Builder;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import javax.persistence.Table;
  * Represents an user
  *
  */
+@Builder
 @Entity
 @Table(name = "users")
 public class User {
@@ -190,6 +192,19 @@ public class User {
     this.address = address;
   }
 
+  @Override
+  public String toString() {
+    return "User{" +
+            "userID=" + userID + ", " +
+            "userName='" + userName + '\'' + ", " +
+            "password='" + password + '\'' + ", " +
+            "firstName='" + firstName + '\'' + ", " +
+            "lastName='" + lastName + '\'' + ", " +
+            "phone=" + phone + ", " +
+            "email='" + email + '\'' + ", " +
+            "address='" + address + '\'' +
+            '}';
+  }
 }
 
 

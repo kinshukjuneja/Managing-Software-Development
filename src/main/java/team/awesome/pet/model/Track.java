@@ -1,7 +1,7 @@
 package team.awesome.pet.model;
 
+import lombok.Builder;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +15,7 @@ import javax.persistence.Table;
  * Represents a track class to help find a pet
  *
  */
+@Builder
 @Entity
 @Table(name = "Track")
 public class Track {
@@ -112,4 +113,13 @@ public class Track {
     this.recordLocation = recordLocation;
   }
 
+  @Override
+  public String toString() {
+    return "Track{" +
+            "trackId=" + trackId + ", " +
+            "pet=" + pet + ", " +
+            "recordTime=" + recordTime + ", " +
+            "recordLocation='" + recordLocation + '\'' +
+            '}';
+  }
 }

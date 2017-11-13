@@ -1,5 +1,8 @@
 package team.awesome.pet.model;
 
+import lombok.Builder;
+import lombok.ToString;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +14,7 @@ import javax.persistence.Table;
  * Represents a shelter where all lost pets can be found
  *
  */
+@Builder
 @Entity
 @Table(name = "shelter")
 public class Shelter {
@@ -190,4 +194,17 @@ public class Shelter {
     this.location = location;
   }
 
+  @Override
+  public String toString() {
+    return "Shelter{" +
+            "shelterId=" + shelterId + ", " +
+            "shelterName='" + shelterName + '\'' + ", " +
+            "description='" + description + '\'' + ", " +
+            "status=" + status + ", " +
+            "capacity=" + capacity + ", " +
+            "city='" + city + '\'' + ", " +
+            "zipCode=" + zipCode + ", " +
+            "location='" + location + '\'' +
+            '}';
+  }
 }

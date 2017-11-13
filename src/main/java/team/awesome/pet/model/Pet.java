@@ -1,5 +1,6 @@
 package team.awesome.pet.model;
 
+import lombok.Builder;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
  * Represents a pet
  *
  */
+@Builder
 @Entity
 @Table(name = "pet")
 public class Pet {
@@ -236,4 +238,19 @@ public class Pet {
     this.currentLocation = currentLocation;
   }
 
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "petId=" + petId + ", " +
+                "name='" + name + '\'' + ", " +
+                "owner=" + owner + ", " +
+                "petType=" + petType + ", " +
+                "shelter=" + shelter + ", " +
+                "petLength=" + petLength + ", " +
+                "petWeight=" + petWeight + ", " +
+                "petColor='" + petColor + '\'' + ", " +
+                "healthStatus=" + healthStatus + ", " +
+                "currentLocation='" + currentLocation + '\'' +
+                '}';
+    }
 }

@@ -1,5 +1,6 @@
 package team.awesome.pet.model;
 
+import lombok.Builder;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import javax.persistence.Table;
 
 // @Gaohan - Feel free to change pettype to int id by extends to IdEntity class instead. Thanks
 
+@Builder
 @Entity
 @Table(name = "PetType")
 public class PetType {
@@ -62,4 +64,12 @@ public class PetType {
 		this.category = category;
 	}
 
+	@Override
+	public String toString() {
+		return "PetType{" +
+				"typeId=" + typeId + ", " +
+				"type='" + type + '\'' + ", " +
+				"category='" + category + '\'' +
+				'}';
+	}
 }
