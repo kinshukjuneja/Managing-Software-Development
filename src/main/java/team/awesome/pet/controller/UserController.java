@@ -46,12 +46,12 @@ public class UserController {
   @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void updateUser(@RequestBody User user) {
     this.userService.updateUser(user);
-  }
+  } //was calling insertUser here earlier which introduced a bug and showed up in test.
 
   @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
   public void insertUser(@RequestBody User user) {
     this.userService.insertUser(user);
-  }
+  } //was calling updateUser here earlier which introduced a bug and showed up in test.
 
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
   public void deleteUserById(@PathVariable("id") int id) {
