@@ -6,10 +6,10 @@ import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import team.awesome.pet.model.Shelter;
+
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Response;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
