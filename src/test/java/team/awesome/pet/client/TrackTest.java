@@ -10,9 +10,7 @@ import team.awesome.pet.model.Track;
 
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
